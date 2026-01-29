@@ -1,0 +1,244 @@
+/* ============================================================
+   Prince Portfolio – Base Styles (Desktop-first)
+   ============================================================ */
+
+* { box-sizing: border-box; }
+html, body { 
+  height: 100%; }
+
+:root {
+  --bg: #f5deb3;
+  --nav-bg: #0b3f5a;
+  --ball: #0ea5a4;
+  --text: #111827;
+  --muted: #4b5563;
+  --card: rgba(255, 255, 255, 0.86);
+  --border: rgba(17, 24, 39, 0.12);
+  --shadow: 0 12px 30px rgba(0,0,0,0.12);
+  --radius: 18px;
+  --nav-height: 72px;
+}
+
+html[data-theme="default"] {
+  --bg: #f5deb3;
+  --nav-bg: firebrick;
+  --ball: teal;
+  --text: #111827;
+  --text-socical:#111827;
+  --muted: #374151;
+  --card: rgba(255, 255, 255, 0.86);
+  --border: rgba(17, 24, 39, 0.12);
+}
+
+html[data-theme="dark"] {
+  --bg: #111827;
+  --nav-bg: #0b1220;
+  --ball: #0ea5a4;
+  --text: #f9fafb;
+  --text-socical:#111827;
+  --muted: #cbd5e1;
+  --card: rgba(31, 41, 55, 0.88);
+  --border: rgba(255, 255, 255, 0.12);
+  --shadow: 0 16px 40px rgba(0,0,0,0.40);
+}
+
+html[data-theme="ocean"] {
+  --bg: #e6f6ff;
+  --nav-bg: #083344;
+  --ball: #06b6d4;
+  --text: #0f172a;
+  --text-socical: #111827;
+  --muted: #334155;
+  --card: rgba(255, 255, 255, 0.90);
+  --border: rgba(15, 23, 42, 0.12);
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 28px 24px calc(var(--nav-height) + 48px);
+}
+
+.page-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Header / Profile */
+.top-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.prince-img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 2px solid var(--nav-bg);
+  background: #fff;
+  object-fit: cover;
+}
+
+.prince-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.prince-info-icon { font-weight: 700; font-size: 28px; }
+.prince-info-text { font-size: 16px; color: var(--muted); }
+
+/* Generic cards */
+.section-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.muted { color: var(--muted); }
+
+/* Buttons (settings) */
+.btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+
+.btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.65);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 150ms ease, background 150ms ease, border-color 150ms ease;
+}
+
+html[data-theme="dark"] .btn { background: rgba(17,24,39,0.55); }
+
+.btn:hover { transform: translateY(-1px); }
+.btn.selected {
+  border-color: var(--ball);
+  box-shadow: 0 0 0 3px rgba(14,165,164,0.20);
+}
+
+/* Socials */
+.socials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.65);
+  color: var(--text-socical);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  width: min(560px, 92vw);
+  height: var(--nav-height);
+  background: var(--nav-bg);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+
+.bottom-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 14px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.bottom-nav li {
+  width: 72px;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.bottom-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.bottom-nav .icon {
+  font-size: 1.55rem;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.bottom-nav .text {
+  position: absolute;
+  bottom: 10px;
+  font-size: 0.75rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  white-space: nowrap;
+}
+
+.bottom-nav li.clicked .icon { transform: translateY(-35px); }
+.bottom-nav li.clicked .text { opacity: 1; transform: translateY(0); }
+
+/* Ball is positioned by JS (left in px) */
+.bottom-nav .ball {
+  position: absolute;
+  top: -34px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--ball);
+  border: 6px solid var(--bg);
+  left: 0;
+  transition: left 0.30s ease;
+  z-index: 1;
+}
+
+/* RTL tweaks (Desktop + Mobile) */
+html[dir="rtl"] body {
+  direction: rtl;
+}
+
+html[dir="rtl"] .top-card{
+  flex-direction: row-reverse;   /* يخلي الصورة يمين والنص يسار */
+  justify-content: flex-start;   /* يثبت المحتوى كبداية السطر بعد الانعكاس */
+}
+
+html[dir="rtl"] .prince-info{
+  text-align: right;
+  align-items: flex-end;         /* دي الأهم: تخلي الاسم والوصف يمين فعلاً */
+}
+

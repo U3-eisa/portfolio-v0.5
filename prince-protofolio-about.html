@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About – Prince Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-mobile.css" />
+  </head>
+
+  <body data-page="about">
+    <div class="page-container">
+      <header class="top-card">
+        <img class="prince-img" src="prince images/main-photo.png" alt="Profile photo" />
+        <div class="prince-info">
+          <div class="prince-info-icon" data-i18n="main_name" >Bashier Eisa Bashier</div>
+          <div class="prince-info-text" data-i18n="info_main">Electrical Engineering</div>
+        </div>
+      </header>
+
+      <section class="section-card">
+        <div class="section-title" data-i18n="aboutTitle">About</div>
+        <p class="muted" data-i18n="aboutDesc">
+          Welcome to my art portfolio. Here you can see selected drawings and portraits.
+        </p>
+
+        <div class="section-title" style="margin-top:14px" data-i18n="socialsTitle">Socials</div>
+        <div class="socials">
+          <!-- Put your real links here -->
+          <a class="social-link" href="https://www.instagram.com/_princebesho_artist?igsh=MW1vMjliY3U4MDVnYQ==" target="_blank" rel="noopener">
+            <ion-icon name="logo-instagram"></ion-icon>
+            Instagram
+          </a>
+          <a class="social-link" href="https://www.linkedin.com/in/bashier-mohamed-488a93365?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener">
+            <ion-icon name="logo-linkedin"></ion-icon>
+            LinkedIn
+          </a>
+          <a class="social-link" href="https://www.facebook.com/share/17uw95SLz1/" target="_blank" rel="noopener">
+            <ion-icon name="logo-facebook"></ion-icon>
+            Facebook
+          </a>
+          <a class="social-link" href="mailto:Engbashiermohamed@gmail.com" target="_blank" rel="noopener">
+            <ion-icon name="mail-outline"></ion-icon>
+            Email
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <nav class="bottom-nav" aria-label="Bottom navigation">
+      <ul class="navi-main">
+        <li class="navi" data-page="home">
+          <a href="index.html">
+            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+            <span class="text" data-i18n="nav_home">Home</span>
+          </a>
+        </li>
+        <li class="navi clicked" data-page="about">
+          <a href="prince-protofolio-about.html">
+            <span class="icon"><ion-icon name="accessibility-outline"></ion-icon></span>
+            <span class="text" data-i18n="nav_about">About</span>
+          </a>
+        </li>
+        <li class="navi" data-page="settings">
+          <a href="prince-protofolio-settings.html">
+            <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+            <span class="text" data-i18n="nav_settings">Settings</span>
+          </a>
+        </li>
+        <div class="ball"></div>
+      </ul>
+    </nav>
+
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

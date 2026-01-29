@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prince Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-mobile.css" />
+    <link rel="stylesheet" href="prince-protofolio.css" />
+  </head>
+
+  <body data-page="home">
+    <div class="page-container">
+      <header class="top-card">
+        <img class="prince-img" src="prince images/main-photo.png" alt="Profile photo" />
+        <div class="prince-info">
+          <div class="prince-info-icon"
+          data-i18n="main_name">Bashier Eisa Bashier</div>
+          <div class="prince-info-text" data-i18n="info_main">Electrical Engineering</div>
+        </div>
+      </header>
+
+      <section class="contaner2" aria-label="Gallery">
+        <!-- 1 -->
+        <div class="slider">
+          <img src="prince images/photo5.jpg" alt="Photo 5" />
+          <div class="details-div">
+            <h3 class="details-name">Miles Morales</h3>
+            <p class="details-description">
+              A dynamic Spider‑Verse fanart piece with bold contrast and motion.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="slider">
+          <img src="prince images/photo4.jpg" alt="Photo 4" />
+          <div class="details-div">
+            <h3 class="details-name">Ahmed Salim</h3>
+            <p class="details-description">
+              A realistic portrait capturing warmth, confidence, and positive energy through expressive features.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="slider">
+          <img src="prince images/photo3.jpg" alt="Photo 3" />
+          <div class="details-div">
+            <h3 class="details-name">Freckled Muse</h3>
+            <p class="details-description">
+              A close‑up portrait study focusing on soft shading, skin texture, and deep eye highlights.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="slider">
+          <img src="prince images/photo2.jpg" alt="Photo 2" />
+          <div class="details-div">
+            <h3 class="details-name">Your Lie in April</h3>
+            <p class="details-description">
+              A collage tribute capturing key emotional moments with clean linework and gentle colors.
+            </p>
+          </div>
+        </div>
+
+        <!-- 5 (active by default) -->
+        <div class="slider active">
+          <img src="prince images/photo1.jpg" alt="Photo 1" />
+          <div class="details-div">
+            <h3 class="details-name" data-i18n="zenitsuTitle">Zenitsu</h3>
+            <p class="details-description" data-i18n="zenitsuDesc">
+              An anime character – Zenitsu Agatsuma. Calm strength and lightning energy.
+            </p>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="slider">
+          <img src="prince images/photo6Fixed.jpg" alt="Photo 6" />
+          <div class="details-div">
+            <h3 class="details-name">Jonny Depp</h3>
+            <p class="details-description">
+              A tribute to the iconic actor and the unforgettable Captain Jack Sparrow, captured with realism and character depth.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <nav class="bottom-nav" aria-label="Bottom navigation">
+      <ul class="navi-main">
+        <li class="navi clicked" data-page="home">
+          <a href="index.html">
+            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+            <span class="text" data-i18n="nav_home">Home</span>
+          </a>
+        </li>
+        <li class="navi" data-page="about">
+          <a href="prince-protofolio-about.html">
+            <span class="icon"><ion-icon name="accessibility-outline"></ion-icon></span>
+            <span class="text" data-i18n="nav_about">About</span>
+          </a>
+        </li>
+        <li class="navi" data-page="settings">
+          <a href="prince-protofolio-settings.html">
+            <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+            <span class="text" data-i18n="nav_settings">Settings</span>
+          </a>
+        </li>
+        <div class="ball"></div>
+      </ul>
+    </nav>
+
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+/* ============================================================
+   Gallery / Slider styles (Home page)
+   ============================================================ */
+
+.contaner2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.slider {
+  width: 112px;
+  height: 210px;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  flex: 0 0 auto;
+  filter: grayscale(60%);
+  transform: translateY(0);
+  transition: width 250ms ease, height 250ms ease, transform 250ms ease, filter 250ms ease;
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.details-div {
+  display: none;
+}
+
+/* Active card drops down and shows details on the right (desktop) */
+.slider.active {
+  order: 99;                 /* move to end => appears below thumbs */
+  width: min(760px, 100%);
+  height: auto;
+  flex: 1 1 760px;
+  filter: none;
+  transform: translateY(10px);
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 14px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.slider.active img {
+  width: 320px;
+  height: 220px;
+  border-radius: 14px;
+  flex: 0 0 auto;
+}
+
+.slider.active .details-div {
+  display: block;
+  flex: 1 1 auto;
+}
+
+.details-name {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+}
+
+.details-description {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+  font-size: 16px;
+}
+
+/* Mobile: keep image + text in the same row (like desktop), and show all thumbnails without swipe */
+@media (max-width: 700px) {
+
+  /* Thumbnails: 5 in one row (no horizontal scroll) */
+.contaner2{
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  align-items: start;
+  justify-items: center;
+}
+
+  .slider{
+    order: 0;
+    width: 100%;
+    height: 150px;
+    border-radius: 18px;
+  }
+
+  /* Active card: full width, image on the left, text on the right */
+  .slider.active{
+    
+    grid-column: 1 / -1;     /* span full row under thumbnails */
+    order: 99;          /* grid handles order */
+    width: 100%;
+    flex-basis: auto;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .slider.active img{
+    width: 46%;
+    height: 170px;
+    object-fit: cover;
+  }
+
+  .slider.active .details-div{
+    display: block;
+  }
+
+  .details-name{
+    font-size: 22px;
+    text-align: left;
+  }
+
+  .details-description{
+    text-align: left;
+    font-size: 14px;
+  }
+
+  html[dir="rtl"] .slider.active{
+    flex-direction: row-reverse;
+  }
+
+  html[dir="rtl"] .details-name,
+  html[dir="rtl"] .details-description{
+    text-align: right;
+  }
+}
