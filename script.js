@@ -39,7 +39,7 @@ const I18N = {
     main_name: 'بشير عيسى بشير',
     info_main:'مهندس كهرباء',
     settingsTitle: 'الإعدادات',
-    settingsDesc: 'اختاري الثيم واللغة.',
+    settingsDesc: 'اختار الثيم واللغة.',
     themeTitle: 'الثيم',
     themeDefault: 'الافتراضي',
     themeDark: 'داكن',
