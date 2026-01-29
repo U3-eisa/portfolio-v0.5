@@ -1,28 +1,195 @@
 @media screen and (max-width: 767px) {
-  /* احذف/الغِ السطر ده نهائياً */
-  /* :root { --clr: wheat; } */
-
+  * {
+    margin: 0px 0px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+  }
+  :root {
+    --clr: wheat;
+  }
   body {
-    background-color: var(--bg);   /* بدل var(--clr) */
-    color: var(--text);
+    background-color: var(--clr);
     margin: 5% 2%;
   }
-
-  /* لو عندك أي عنصر بيستخدم var(--clr) خليها var(--bg) */
-  .ball {
-    border: solid 6px var(--bg);   /* بدل var(--clr) */
-    background-color: var(--ball); /* اختياري: يخليها تمشي مع الثيم */
+  .main {
+    display: flex;
+    flex-direction: column;
+    height: 88dvh;
+    justify-content: start;
+  }
+  .card {
+    display: flex;
+  }
+  .prince-info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px 0px 15px;
+  }
+  .prince-info-icon {
+    font-weight: 700;
+    font-size: 24px;
+  }
+  .prince-info-text {
+    font-size: 16px;
+  }
+  .slider {
+    height: 18vh;
+  }
+  .prince-img {
+    height: 120px;
+    background-color: white;
+    margin-right: 10px;
+    border: 2px solid firebrick;
+    border-radius: 50%;
   }
 
-  .navi-div ul li a .icon,
+  .contaner1 {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    bottom: 12px;
+  }
+
+  .contanier {
+    height: fit-content;
+    display: flex;
+    position: relative;
+    gap: 50px;
+    flex-direction: column;
+    column-gap: 50px;
+    align-content: space-between;
+    justify-content: flex-end;
+  }
+
+  .navi-div ul {
+    display: flex;
+    width: 210px;
+  }
+  .navi-div ul li {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+  }
+  .navi-div ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-size: 500;
+  }
+  .navi-div ul li a .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--clr);
+  }
+  .navi-div ul li.clicked a .icon {
+    transform: translateY(-35px);
+  }
   .navi-div ul li a .text {
-    color: #fff; /* أو var(--text) حسب تصميمك */
+    position: absolute;
+    color: var(--clr);
+    font-weight: 400;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
   }
-
+  .navi-div ul li.clicked a .text {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  .ball {
+    position: absolute;
+    top: -50%;
+    width: 70px;
+    height: 70px;
+    background-color: teal;
+    border-radius: 50%;
+    border: solid 6px var(--clr);
+    transition: 0.5s;
+  }
   .ball::before {
-    box-shadow: 0px -10px 0 0 var(--bg); /* بدل var(--clr) */
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 0px -10px 0 0 var(--clr);
   }
   .ball::after {
-    box-shadow: 0px -10px 0 0 var(--bg); /* بدل var(--clr) */
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: 0px -10px 0 0 var(--clr);
+  }
+  .navi-div ul li:nth-child(1).clicked ~ .ball {
+    transform: translateX(calc(70px * 0));
+  }
+  .navi-div ul li:nth-child(2).clicked ~ .ball {
+    transform: translateX(calc(70px * 1));
+  }
+  .navi-div ul li:nth-child(3).clicked ~ .ball {
+    transform: translateX(calc(70px * 2));
+  }
+
+  .navi-div {
+    width: 80%;
+    height: 70px;
+    background-color: firebrick;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+}
+
+/* =========================
+   RTL (Arabic) header layout
+   ========================= */
+html[dir="rtl"] .card {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+html[dir="rtl"] .prince-info {
+  text-align: right;
+  /* mirror the spacing (was margin-left in LTR) */
+  margin: 10px 15px 0 0;
+  align-items: flex-end;
+}
+
+html[dir="rtl"] .prince-img {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+/* Mobile: keep avatar size stable (prevents it from stretching upward) */
+@media (max-width: 768px) {
+  .prince-img {
+    width: 120px;
+    height: 120px;
+    flex: 0 0 120px;
   }
 }
